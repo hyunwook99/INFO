@@ -16,7 +16,7 @@ public class InfoUpdateViewController implements Controller{
 @Override
 public InfoHandlerAdapter excute(HttpServletRequest request, HttpServletResponse response) {
 	int info_Number=Integer.parseInt(request.getParameter("info_Number"));
-    String info_Title=request.getParameter("info_Number");
+    String info_Title=request.getParameter("info_Title");
     String info_Content= request.getParameter("info_Content");
     String info_Date = request.getParameter("info_Date");
 	log.info(info_Number);
@@ -33,7 +33,7 @@ public InfoHandlerAdapter excute(HttpServletRequest request, HttpServletResponse
 	request.setAttribute("infoDTO", infoDTO);
 	InfoHandlerAdapter infoHandlerAdapter = new InfoHandlerAdapter();
 	log.info("수정 전 데이터 조회");
-    infoHandlerAdapter.setPath("/view/info/info_update_view.jsp");
+    infoHandlerAdapter.setPath("/WEB-INF/view/info/info_update_view.jsp");
 	return infoHandlerAdapter;
 }
 }
